@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 DATA = {
     'omlet': {
@@ -28,3 +29,47 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+
+def omlet(request):
+    servings = int(request.GET.get('servings', 1))
+    context = {
+        'recept': {
+            'яйца, шт': 2,
+            'молоко, л': 0.1,
+            'соль, ч.л.': 0.5,
+        }
+    }
+    if servings:
+        for key, val in context['recept'].items():
+            context['recept'][key] = val * servings
+    return render(request, 'calculator/recept.html', context=context)
+
+
+def pasta(request):
+    servings = int(request.GET.get('servings', 1))
+    context = {
+        'recept': {
+            'макароны, г': 0.3,
+            'сыр, г': 0.05,
+        }
+    }
+    if servings:
+        for key, val in context['recept'].items():
+            context['recept'][key] = val * servings
+    return render(request, 'calculator/recept.html', context=context)
+
+def buter(request):
+    servings = int(request.GET.get('servings', 1))
+    context = {
+        'recept': {
+            'хлеб, ломтик': 1,
+            'колбаса, ломтик': 1,
+            'сыр, ломтик': 1,
+            'помидор, ломтик': 1,
+        }
+    }
+    if servings:
+        for key, val in context['recept'].items():
+            context['recept'][key] = val * servings
+    return render(request, 'calculator/recept.html', context=context)
