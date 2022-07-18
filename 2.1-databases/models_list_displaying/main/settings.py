@@ -56,9 +56,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_models_list',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '5433',
+        'USER': 'postgres',
+        'PASSWORD': 'Pavlovich1',
     }
 }
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
