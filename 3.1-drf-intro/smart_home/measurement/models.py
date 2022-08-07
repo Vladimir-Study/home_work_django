@@ -3,8 +3,8 @@ from django.utils import timezone
 
 class Measurement(models.Model):
 
-    sensor = models.ForeignKey('Sensor', on_delete=models.CASCADE, related_name='sensor',
-                                    verbose_name='Измерения')
+    sensor = models.ForeignKey('Sensor', on_delete=models.CASCADE, related_name='measurements',
+                                    verbose_name='Измерения', blank=True)
     temperature = models.FloatField(verbose_name='Температура')
     created_at = models.DateTimeField(editable=False, verbose_name='Время последнего замера')
 

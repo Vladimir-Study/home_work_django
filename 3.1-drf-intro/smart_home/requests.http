@@ -14,13 +14,13 @@ Content-Type: application/json
 
 {
   "name": "ESP32",
-  "description": "Датчик на кухне за холодильником"
+  "description": "Датчик на кухне у плиты"
 }
 
 ###
 
 # обновление датчика
-PATCH {{baseUrl}}/sensors/11/
+PATCH {{baseUrl}}/sensors/18/
 Content-Type: application/json
 
 {
@@ -34,12 +34,12 @@ POST {{baseUrl}}/measurements/
 Content-Type: application/json
 
 {
-  "sensor": 11,
-  "temperature": 25.0
+  "sensor": 18,
+  "temperature": 25.3
 }
 
 ###
 
 # получение информации по датчику
-GET {{baseUrl}}/sensor/2/
+GET {{baseUrl}}/sensor/18/
 Content-Type: application/json
