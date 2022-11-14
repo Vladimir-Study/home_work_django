@@ -83,9 +83,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_stocks_products',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': 'Pavlovich1'
+        'PASSWORD': '19911609'
     }
 }
 
