@@ -7,8 +7,8 @@ POST http://localhost:8000/api/v1/products/
 Content-Type: application/json
 
 {
-  "title": "Бананы",
-  "description": "Лучшие бананы на рынке"
+  "title": "Мандарины",
+  "description": "Лучшие Мандарины на рынке"
 }
 
 ###
@@ -46,7 +46,7 @@ POST http://localhost:8000/api/v1/stocks/
 Content-Type: application/json
 
 {
-  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www",
+  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: eee",
   "positions": [
     {
       "product": 1,
@@ -64,18 +64,18 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH http://localhost:8000/api/v1/stocks/13/
+PATCH http://localhost:8000/api/v1/stocks/3/
 Content-Type: application/json
 
 {
   "positions": [
     {
-      "product": 4,
+      "product": 3,
       "quantity": 100,
       "price": 130.80
     },
     {
-      "product": 3,
+      "product": 4,
       "quantity": 243,
       "price": 145
     }

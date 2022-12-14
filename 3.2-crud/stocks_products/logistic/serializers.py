@@ -29,6 +29,7 @@ class StockSerializer(serializers.ModelSerializer):
 
         # создаем склад по его параметрам
         stock = super().create(validated_data)
+        print(stock)
 
         # здесь вам надо заполнить связанные таблицы
         # в нашем случае: таблицу StockProduct
@@ -47,7 +48,9 @@ class StockSerializer(serializers.ModelSerializer):
         # в нашем случае: таблицу StockProduct
         # с помощью списка positions
         for position in positions:
-            StockProduct.objects.filter(pk=position['product'].id).update(stock=stock, **position)
-
-
+            lst_product = [x.id for x in StockProduct.objects.filter(stock_id=instance.id)]
+            if position['product'].id not in lst_product:
+                StockProduct.objects.create(stock=instance, **position)
+            else:
+                StockProduct.objects.filter(pk=position['product'].id).update(stock=stock, **position)
         return stock
