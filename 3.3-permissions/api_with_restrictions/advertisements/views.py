@@ -16,13 +16,11 @@ class AdvertisementViewSet(ModelViewSet):
     serializer_class = AdvertisementSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = AdvertisementFilter
-    permission_classes = [IsAuthenticated & CustomDeleteAdvertisement]
+    permission_classes = [CustomDeleteAdvertisement]
 
-'''
     def get_permissions(self):
         """Получение прав для действий."""
         if self.action in ["create", "update", "partial_update"]:
             return [IsAuthenticated()]
         return []
-'''
 
