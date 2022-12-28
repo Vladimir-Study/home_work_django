@@ -14,7 +14,7 @@ Content-Type: application/json
 Authorization: Token 5e1e8d6456c76ec59dca53be9ac5f87c874c68bd
 
 {
-  "title": "Стол IKEA",
+  "title": "Стул IKEA",
   "description": "Срочно"
 }
 
